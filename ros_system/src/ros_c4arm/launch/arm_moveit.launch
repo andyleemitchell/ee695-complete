@@ -1,0 +1,24 @@
+<launch>
+  <arg name="sim"         default="false" />
+  <arg name="usb_port"    default="/dev/ttyACM0" />
+  <arg name="start_rviz"  default="false" />
+
+  <include file="$(find open_manipulator_controllers)/launch/joint_trajectory_controller.launch">
+    <arg name="sim"         value="$(arg sim)" />
+    <arg name="usb_port"    value="$(arg usb_port)" />
+    <arg name="start_rviz"  value="$(arg start_rviz)" />
+  </include>
+
+  <!-- realsense camera tf publisher -->
+  <node pkg="tf" type="static_transform_publisher" name="camera_frame_to_realsense_frame"
+      args="0.070 0.032 0.052 0 0 0 link5 camera_link 100" />
+
+  <!-- realsense camera launch -->
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+    <arg name="enable_pointcloud"   value="true"/>
+    <arg name="align_depth"         value="true"/>
+  </include>
+
+  <include file="$(find ros_c4arm)/launch/octomap_server.launch"/>
+
+</launch>

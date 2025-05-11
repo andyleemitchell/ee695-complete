@@ -1,0 +1,3 @@
+<launch>
+    <node name="gui" pkg="c4_gui_pkg" type="test_double.py" output="screen"/>
+</launch>

@@ -1,0 +1,7 @@
+<launch>
+    <!-- MCTS Node -->
+    <node name="ros_c4gameplay" pkg="ros_c4gameplay" type="ros_c4gameplay_node" output="screen"/>
+
+    <!-- Python wrapper for service -->
+    <node name="next_move" pkg="ros_c4gameplay" type="next_move.py" output="screen"/>
+</launch>

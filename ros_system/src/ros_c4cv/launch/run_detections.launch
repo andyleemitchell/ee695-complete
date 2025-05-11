@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find ros_c4cv)/launch/camera.launch"/>
+    <node name="test_cv" pkg="ros_c4cv" type="test_cv.py" output="screen">
+        <param name="json_file" value="$(find ros_c4cv)/scripts/.board_state.json" />
+        <param name="config_file" value="$(find ros_c4cv)/scripts/.c4sd_conf.json" />
+    </node>
+    <node name="display_board_state" pkg="ros_c4cv" type="display_board_state.py" output="screen"/>
+</launch>

@@ -1,0 +1,11 @@
+<launch>
+<!-- main entry point into entire system.
+    - this will launch each of the components in order.
+ -->
+    <include file="$(find ros_c4arm)/launch/testing-arm.launch"/>
+    <include file="$(find ros_c4cv)/launch/run_detections.launch"/>
+    <!-- <node name="test_next_move_msg" pkg="ros_c4gameplay" type="test_next_move_msg.py" output="screen"/> -->
+    <include file="$(find ros_c4gameplay)/launch/gameplay.launch"/>
+    <include file="$(find c4_gui_pkg)/launch/gui.launch"/>
+
+</launch>

@@ -1,0 +1,4 @@
+# PlaceCounter.srv
+ros_c4msgs/NextMove next_move
+---
+bool success

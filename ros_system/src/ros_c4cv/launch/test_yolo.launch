@@ -1,0 +1,10 @@
+<launch>
+    <include file="$(find ros_c4cv)/launch/camera.launch"/>
+    <node name="test_yolo" pkg="ros_c4cv" type="test_yolo.py" output="screen">
+        <param name="~weights"                  value="$(find ros_c4cv)/weights/april16.pt" />
+        <param name="~confidence_threshold"     value="0.8" />
+        <param name="~camera_topic"             value="/usb_cam/image_raw" />
+        <param name="~board_state_topic"        value="/c4/board_state" />
+    </node>
+    <node name="display_board_state" pkg="ros_c4cv" type="display_board_state.py" output="screen"/>
+</launch>

@@ -1,0 +1,33 @@
+<launch>
+    <arg name="image_topic" default="/usb_cam/image_raw"/>
+    <arg name="start_robot" default="false"/>
+
+    <arg name="usb_port"     default="/dev/ttyACM0"/>
+    <arg name="baud_rate"    default="1000000"/>
+    <arg name="control_period"         default="0.010"/>
+    <arg name="use_platform"           default="true"/>
+
+    <group if="$(arg start_robot)">
+        <include file="$(find ros_c4arm)/launch/arm.launch">
+            <arg name="usb_port" value="$(arg usb_port)"/>
+            <arg name="baud_rate" value="$(arg baud_rate)"/>
+            <arg name="control_period" value="$(arg control_period)"/>
+            <arg name="use_platform" value="$(arg use_platform)"/>
+        </include>
+        <node name="test_services" pkg="ros_c4cv" type="test_services.py" output="screen"/>
+    </group>
+
+    <!-- Start the USB camera -->
+    <!-- <include file="$(find ros_c4cv)/launch/camera.launch"/> -->
+
+    <!-- Start the C++ image processor -->
+    <!-- <node name="image_processor" pkg="ros_c4cv" type="image_processor" output="screen">
+        <remap from="/image_raw" to="$(arg image_topic)"/>
+    </node> -->
+
+    <!-- Start the Python image analyzer -->
+    <!-- <node name="image_analyser" pkg="ros_c4cv" type="image_analyser.py" output="screen">
+        <remap from="/image_raw" to="$(arg image_topic)"/>
+    </node> -->
+
+</launch>

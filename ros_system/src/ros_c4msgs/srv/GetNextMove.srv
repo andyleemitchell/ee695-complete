@@ -1,0 +1,4 @@
+# GetNextMove.srv
+ros_c4msgs/MoveMade move_made
+---
+ros_c4msgs/NextMove next_move

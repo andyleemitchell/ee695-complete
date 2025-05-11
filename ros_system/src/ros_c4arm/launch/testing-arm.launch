@@ -1,0 +1,15 @@
+<launch>
+    <arg name="usb_port"     default="/dev/ttyACM0"/>
+    <arg name="baud_rate"    default="1000000"/>
+    <arg name="control_period"         default="0.010"/>
+    <arg name="use_platform"           default="true"/>
+
+    <include file="$(find ros_c4arm)/launch/arm.launch">
+        <arg name="usb_port" value="$(arg usb_port)"/>
+        <arg name="baud_rate" value="$(arg baud_rate)"/>
+        <arg name="control_period" value="$(arg control_period)"/>
+        <arg name="use_platform" value="$(arg use_platform)"/>
+    </include>
+    <node name="test_pickup_on_msg" pkg="ros_c4arm" type="test_pickup_on_msg.py" output="screen"/>
+    <node name="test_place_on_nextmove_msg" pkg="ros_c4arm" type="test_place_on_nextmove_msg.py" output="screen"/>
+</launch>

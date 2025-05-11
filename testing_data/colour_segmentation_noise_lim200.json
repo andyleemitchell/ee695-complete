@@ -1,0 +1,12 @@
+{
+    "name": "Colour Segmentation (noise_lim=200)",
+    "detections": 46,
+    "successes": 13,
+    "success_rate": 28.26,
+    "failures": 27,
+    "failure_rate": 58.7,
+    "oneoffs": 6,
+    "oneoff_rate": 13.04,
+    "avg_detection_time": 0.017929776390741135,
+    "avg_fps": 55.77314397051801
+}

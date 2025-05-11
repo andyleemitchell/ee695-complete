@@ -1,0 +1,8 @@
+# GetCounterLocation.srv
+string RED = "red"
+string YELLOW = "yellow"
+
+string colour
+---
+geometry_msgs/Point point
+bool counter_found

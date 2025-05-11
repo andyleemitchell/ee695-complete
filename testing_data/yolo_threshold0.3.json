@@ -1,0 +1,12 @@
+{
+    "name": "YOLO (threshold=0.3)",
+    "detections": 43,
+    "successes": 31,
+    "success_rate": 72.09,
+    "failures": 8,
+    "failure_rate": 18.6,
+    "oneoffs": 4,
+    "oneoff_rate": 9.3,
+    "avg_detection_time": 0.058654178521069494,
+    "avg_fps": 17.04908371772327
+}

@@ -1,0 +1,12 @@
+{
+    "name": "Default Colour Segmentation",
+    "detections": 46,
+    "successes": 24,
+    "success_rate": 52.17,
+    "failures": 14,
+    "failure_rate": 30.43,
+    "oneoffs": 8,
+    "oneoff_rate": 17.39,
+    "avg_detection_time": 0.018032826302299763,
+    "avg_fps": 55.454424239225766
+}

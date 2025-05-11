@@ -1,0 +1,17 @@
+<launch>
+
+    <!-- <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <arg name="enable_pointcloud"   value="true"/>
+        <arg name="align_depth"         value="true"/>
+    </include> -->
+
+    <node name="octomap_server" pkg="octomap_server" type="octomap_server_node" output="screen">
+        <param name="frame_id"                  value="world"/>
+        <param name="resolution"                value="0.025"/>
+        <param name="sensor_model/max_range"    value="1.0"/>
+        <param name="pointcloud_min_z"             value="-0.01"/>
+        <!-- <param name="pointcloud_max_z"             value="0.1"/> -->
+        <remap from="cloud_in"                  to="/camera/depth/color/points"/>
+    </node>
+
+</launch>
